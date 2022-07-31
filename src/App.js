@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from './components/Header';
+import HeaderContainer from './containers/HeaderContainer';
 import Notice from './components/Notice';
 import Footer from './components/Footer';
-import Home from './components/Home';
+//import Home from './components/Home';
 import HomeContainer from './containers/HomeContainer';
 import NoMatch from './components/NoMatch';
 import Contact from './components/pages/Contact';
@@ -18,7 +18,7 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Header />
+        <HeaderContainer />
         <Notice data={{title:'Holiday', message:'Tomorrow will be holiday.',date_time:'2020-01-20 11:00:10'}} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

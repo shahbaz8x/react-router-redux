@@ -7,12 +7,15 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 //import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
-function Header() {
+function Header(props) {
 
     return (
         <>
         <Container fluid>
             <Container className="pb-3">
+                <Row>
+                    <p>Items added: {props.data.length}</p>
+                </Row>
                 <Row>
                     <Col sm={3}>
                         <div className="text-center" style={{verticalAlign:'middle'}}>

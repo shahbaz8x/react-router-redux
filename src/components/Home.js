@@ -1,15 +1,17 @@
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import ControlledCarousel from '../components/ControlledCarousel';
 
-function Home() {
-
+function Home(props) {
+    console.log("props",props.data);
     return (
         <Container className="bg-light py-3" fluid>
             <Container>
                 <Row>
                     <Col className="text-center">
                         <h3>Welcome to Aayesha Enterprise</h3>
-                        <p>This is Aayesha Enterprise</p>
+                        
+                        <button onClick={()=>props.addToCartHandler({price:'1200',name:'Iphone'})}>Add to Cart</button>
+                        <button onClick={()=>props.removeToCartHandler()}>Remove to Cart</button>
                     </Col>
                 </Row>
                 <Row>
