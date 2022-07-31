@@ -2,12 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import NoMatch from './NoMatch';
-import Contact from './pages/Contact';
-import About from './pages/About';
+import Header from './components/Header';
+import Notice from './components/Notice';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import HomeContainer from './containers/HomeContainer';
+import NoMatch from './components/NoMatch';
+import Contact from './components/pages/Contact';
+import About from './components/pages/About';
 
 const One = () => <h1>One</h1>;
 const Two = () => <h1>Two</h1>;
@@ -17,13 +19,14 @@ function App() {
     <React.Fragment>
       <Router>
         <Header />
+        <Notice data={{title:'Holiday', message:'Tomorrow will be holiday.',date_time:'2020-01-20 11:00:10'}} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
 
 
           <Route exact path="/">
-            <Home />
+            <HomeContainer />
           </Route>
 
           <Route path="/about-us">

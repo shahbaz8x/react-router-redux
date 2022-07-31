@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../App.css';
 
 import {React,useEffect} from "react";
 import {
@@ -12,7 +12,7 @@ import {
 import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
 import Staff from './about/Staff';
 import Aestree from './about/Aestree';
-import '../css/sliding-border.css';
+import '../../components/css/sliding-border.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

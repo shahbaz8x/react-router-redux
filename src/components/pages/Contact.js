@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../App.css';
 import { Container, Row, Col, Breadcrumb, Form, Button } from 'react-bootstrap';
 
 function Contact() {

@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import ControlledCarousel from './ControlledCarousel';
+import ControlledCarousel from '../components/ControlledCarousel';
 
 function Home() {
 
