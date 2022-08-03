@@ -2,7 +2,15 @@ import { Link, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
+const login = localStorage.getItem("isLoggedIn");
+
+
+
 function Navigation() {
+    function onLogoutHandler() {
+      localStorage.clear();
+      
+    }
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -21,16 +29,28 @@ function Navigation() {
               */}
 
               <NavLink className="nav-link" as={Link} to="/about" activeClassName="active">About</NavLink>
+              
+              <NavLink className="nav-link" as={Link} to="/gallery" activeClassName="active">Gallery</NavLink>
               <NavLink className="nav-link" as={Link} to="/contact" activeClassName="active">Contact</NavLink>
               
               <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                 <NavLink className="dropdown-item" as={Link} to="/new-path" activeClassName="active" activeStyle={{fontWeight: "bold"}}>Two</NavLink>
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
+              {login ? (
+                <>
+                <NavLink className="nav-link" as={Link} to="/notices" activeClassName="active">Notices</NavLink>
+                <NavLink className="nav-link" as={Link} to="/logout" onClick={onLogoutHandler}>Logout</NavLink>
+                </>
+              ) : (
+                <>
+                <NavLink className="nav-link" as={Link} to="/login" activeClassName="active">Login</NavLink>
+                <NavLink className="nav-link" as={Link} to="/login1" activeClassName="active">Login</NavLink>
+                </>
+              )}
             </Nav>
             <Nav>
               <Nav.Link href="#deets">Facebook</Nav.Link>

@@ -7,12 +7,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux';
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 import {Provider} from 'react-redux'
 import rootReducer from './service/reducers/index'
-const store = createStore(rootReducer)
-console.log("store data", store)
+//const store = createStore(rootReducer)
+//console.log("store data", store)
 //
+
+const middleware = [thunk];
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
+console.log("store data", store);
+
 
 ReactDOM.render(
   <Provider store={store}>
